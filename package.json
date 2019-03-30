@@ -1,0 +1,28 @@
+{
+  "name": "stringify-any",
+  "version": "0.0.1",
+  "description": "Stringify any object into human readable form.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taw/stringify-any.git"
+  },
+  "keywords": [
+    "testing",
+    "test",
+    "stringify",
+    "json"
+  ],
+  "author": "Tomasz Wegrzanowski <Tomasz.Wegrzanowski@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taw/stringify-any/issues"
+  },
+  "homepage": "https://github.com/taw/stringify-any#readme",
+  "devDependencies": {
+    "ava": "^1.4.1"
+  }
+}
