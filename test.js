@@ -32,7 +32,7 @@ test('special cases data types', t => {
     [new Set(), "new Set()"],
     [new WeakMap(), "new WeakMap(?)"],
     [new WeakSet(), "new WeakSet(?)"],
-    // new Date(),  // FIXME
+
   ];
 
  for(let [obj, str] of samples) {
@@ -40,5 +40,13 @@ test('special cases data types', t => {
   }
 })
 
-// TODO: indents
+test('one level collections', t => {
+  t.is(stringify([1,2,3]), "[\n  1,\n  2,\n  3,\n]")
+  t.is(stringify(new Set([1,2,3])), "new Set([\n  1,\n  2,\n  3,\n])")
+  t.is(stringify({x: 1, y: 2}), "{\n  \"x\": 1,\n  \"y\": 2,\n}")
+  t.is(stringify(new Map([['x', 1], ['y', 2]])), "new Map([\n  [\"x\", 1],\n  [\"y\", 2],\n])")
+})
+
+// TODO: multi-indents
 // TODO: string escape codes
+// TODO: Date
