@@ -85,10 +85,17 @@ let stringify_rec = (obj, nl) => {
   if (t === "number") {
     return stringify_number(obj);
   }
+  if (t === "function") {
+    return "function(){?}"
+  }
   if (obj instanceof WeakMap) {
     return "new WeakMap(?)";
-  } else if (obj instanceof WeakSet) {
+  }
+  if (obj instanceof WeakSet) {
     return "new WeakSet(?)";
+  }
+  if (obj instanceof Date) {
+    return "new Date(" + JSON.stringify(obj.toISOString()) + ")"
   }
 
   if (Array.isArray(obj)) {
